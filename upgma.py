@@ -41,12 +41,13 @@ def printMatrix(distMatrix, sequences):
 # find the lowest value in the matrix
 def lowestVal(matrix, l):
     smallest = 999999
-    previous = 999999
-
-    for i in range(l):
-        for j in range(l):
-            if matrix[i][j] < smallest and matrix[i][j] != 0 and smallest != previous:
-                smallest = matrix[i][j]
+    x = -9999
+    y = -9999
+    for i in range(1, l):
+        for j in range(1, l):
+            ex = matrix[i][j]
+            if matrix[i][j] < smallest and matrix[i][j] != 0 and smallest:
+                smallest = int(matrix[i][j])
                 x, y = i, j
 
     return x, y
@@ -82,7 +83,7 @@ def updateMatrix(matrix, l, x, y):
         #delete
         del matrix[i][y]
     del matrix[y]
-
+    printMatrix(matrix, l)
 
 # def findDist(matrix, x, y):
 #     return matrix[x][y]
