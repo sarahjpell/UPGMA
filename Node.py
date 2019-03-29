@@ -1,12 +1,17 @@
 class Node:
-    def __init__(self, n, d, l, r):
-        self.name = n
+    def __init__(self, n, d, label, l, r):
+        self.name = [n]
         self.distance = d
+        self.label = label
         self.left = l
         self.right = r
 
-    def upgma(self):
-        a = 0
+    def setDistance(self, d):
+        self.distance = d
+
+    def setLabel(self, l):
+        self.label = l
+
     #  determine two cluster, i, j where distance is smallest
 
     # if multiple of same number, say that there are multiple optimum trees
