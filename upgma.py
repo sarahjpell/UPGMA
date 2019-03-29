@@ -224,8 +224,8 @@ while end == 0:
     # are there multiple optimum trees?
     if time == 1:
         multiple = findMult(distMatrix, len(distMatrix), x, y)
+        print multiple
         time += 1
-
     # update matrix
     distMatrix = updateMatrix(distMatrix, len(distMatrix), x, y, nodes)
 
